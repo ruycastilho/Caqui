@@ -24,21 +24,25 @@ def query(IDE):
     telefone = Telefone.objects.all().get(id_instituicao=IDE).receita
     transporte = Transporte.objects.all().get(id_instituicao=IDE).receita
     
-    query_data = {'receita total': receita_total, 'auxilio': auxilio}
-    
+    query_data = {'receita_total': receita_total, 'auxilio': auxilio, 'correios': correios, 'despesas': despesas, 'energia': energia, 'estagiarios': estagiarios, 'obras': obras, 'pessoal': pessoal, 'royalties': royalties, 'limpeza': limpeza, 'telefone': telefone, 'transporte': transporte}
+
     # despesa
-    #query_data.append(Gasto_Instituto.objects.all().get(id_instituicao=IDE).despesa_total)
-    #query_data.append(Auxilio_Estudantil.objects.all().get(id_instituicao=IDE).despesa)
-    #query_data.append(Correios.objects.all().get(id_instituicao=IDE).despesa)
-    #query_data.append(Despesas_Centralizadas.objects.all().get(id_instituicao=IDE).despesa)
-    #query_data.append(Energia_Eletrica.objects.all().get(id_instituicao=IDE).despesa)
-    #query_data.append(Estagiarios.objects.all().get(id_instituicao=IDE).despesa)
-    #query_data.append(Obras_e_Instalacoes.objects.all().get(id_instituicao=IDE).despesa)
-    #query_data.append(Pessoal_e_Reflexos.objects.all().get(id_instituicao=IDE).despesa)
-    #query_data.append(Royalties.objects.all().get(id_instituicao=IDE).despesa)
-    #query_data.append(Servico_de_Limpeza.objects.all().get(id_instituicao=IDE).despesa)
-    #query_data.append(Telefone.objects.all().get(id_instituicao=IDE).despesa)
-    #query_data.append(Transporte.objects.all().get(id_instituicao=IDE).despesa)
+    receita_total = Gasto_Instituto.objects.all().get(id_instituicao=IDE).despesa_total
+    auxilio = Auxilio_Estudantil.objects.all().get(id_instituicao=IDE).despesa
+    correios = Correios.objects.all().get(id_instituicao=IDE).despesa
+    despesas = Despesas_Centralizadas.objects.all().get(id_instituicao=IDE).despesa
+    energia = Energia_Eletrica.objects.all().get(id_instituicao=IDE).despesa
+    estagiarios = Estagiarios.objects.all().get(id_instituicao=IDE).despesa
+    obras = Obras_e_Instalacoes.objects.all().get(id_instituicao=IDE).despesa
+    pessoal = Pessoal_e_Reflexos.objects.all().get(id_instituicao=IDE).despesa
+    royalties = Royalties.objects.all().get(id_instituicao=IDE).despesa
+    servico = Servico_de_Limpeza.objects.all().get(id_instituicao=IDE).despesa
+    telefone = Telefone.objects.all().get(id_instituicao=IDE).despesa
+    transporte = Transporte.objects.all().get(id_instituicao=IDE).despesa
+
+    aux = {'receita_total_despesa': receita_total, 'auxilio_despesa': auxilio, 'correios_despesa': correios, 'despesas_despesa': despesas, 'energia_despesa_despesa': energia, 'estagiarios_despesa': estagiarios, 'obras_despesa': obras, 'pessoal_despesa': pessoal, 'royalties_despesa': royalties, 'limpeza_despesa': limpeza, 'telefone_despesa': telefone, 'transporte_despesa': transporte}
+
+    query_data.update(aux)
 
     return query_data
 
