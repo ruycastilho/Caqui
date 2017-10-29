@@ -138,7 +138,9 @@
         </div>
     
         <div class="col-sm-4">
-            <img src="/home/ruy/Code/Django/Caqui/Caqui/Caqui/Caqui/static/img/plot/aux.png" width=800 height=470/>
+            {% load static %}
+            <img src="{% static "img/plot/aux.png" %}" width=800 height=470/>
+
         </div>
     
     </div>
