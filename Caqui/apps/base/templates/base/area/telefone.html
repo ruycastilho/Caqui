@@ -84,80 +84,65 @@
     </nav>
 
     <div class="page-header text-center">
-      <h1>Telefone - 2016</h1>
+      <h1>Telefone - 2015</h1>
     </div>
 
 
-    {% load static %}
-    <img src="{% static "img/caqui.jpg" %}" alt="Trocar Imagem!"/>
+    <div class = "row">
+    
+        <div class = "col-sm-4">
+            <h1>IMECC:</h1>
+            <h1>Receita: R${{ imecc_receita }}</h1>
+            <h1>Despesa:: R${{ imecc_despesa }}</h1>
+            <h1>IG:</h1>
+            <h1>Receita: R${{ ig_receita }}</h1>
+            <h1>Despesa:: R${{ ig_despesa }}</h1>
+            <h1>FCM:</h1>
+            <h1>Receita: R${{ fcm_receita }}</h1>
+            <h1>Despesa:: R${{ fcm_despesa }}</h1>
+            <h1>IFGW:</h1>
+            <h1>Receita: R${{ ifgw_receita }}</h1>
+            <h1>Despesa:: R${{ ifgw_despesa }}</h1>
+            <h1>FEA:</h1>
+            <h1>Receita: R${{ fea_receita }}</h1>
+            <h1>Despesa:: R${{ fea_despesa }}</h1>
+            <h1>IFCH:</h1>
+            <h1>Receita: R${{ ifch_receita }}</h1>
+            <h1>Despesa:: R${{ ifch_despesa }}</h1>
+            <h1>FEAGRI:</h1>
+            <h1>Receita: R${{ feagri_receita }}</h1>
+            <h1>Despesa:: R${{ feagri_despesa }}</h1>
+            <h1>IEL:</h1>
+            <h1>Receita: R${{ iel_receita }}</h1>
+            <h1>Despesa:: R${{ iel_despesa }}</h1>
+            <h1>IB:</h1>
+            <h1>Receita: R${{ ib_receita }}</h1>
+            <h1>Despesa:: R${{ ib_despesa }}</h1>
+            <h1>FEQ:</h1>
+            <h1>Receita: R${{ feq_receita }}</h1>
+            <h1>Despesa:: R${{ feq_despesa }}</h1>
+            <h1>FEEC:</h1>
+            <h1>Receita: R${{ feec_receita }}</h1>
+            <h1>Despesa:: R${{ feec_despesa }}</h1>
+            <h1>FENF:</h1>
+            <h1>Receita: R${{ fenf_receita }}</h1>
+            <h1>Despesa:: R${{ fenf_despesa }}</h1>
+            <h1>FEM:</h1>
+            <h1>Receita: R${{ fem_receita }}</h1>
+            <h1>Despesa:: R${{ fem_despesa }}</h1>
+            <h1>IQ:</h1>
+            <h1>Receita: R${{ iq_receita }}</h1>
+            <h1>Despesa:: R${{ iq_despesa }}</h1>
+            <h1>IC:</h1>
+            <h1>Receita: R${{ ic_receita }}</h1>
+            <h1>Despesa:: R${{ ic_despesa }}</h1>
+        </div>
 
-    <div>
-        <h1>IMECC:</h1>
-        <h1>Receita: R${{ imecc_receita }}</h1>
-        <h1>Despesa:: R${{ imecc_despesa }}</h1>
-        <h1>IG:</h1>
-        <h1>Receita: R${{ ig_receita }}</h1>
-        <h1>Despesa:: R${{ ig_despesa }}</h1>
-        <h1>FCM:</h1>
-        <h1>Receita: R${{ fcm_receita }}</h1>
-        <h1>Despesa:: R${{ fcm_despesa }}</h1>
-        <h1>IFGW:</h1>
-        <h1>Receita: R${{ ifgw_receita }}</h1>
-        <h1>Despesa:: R${{ ifgw_despesa }}</h1>
-        <h1>FEA:</h1>
-        <h1>Receita: R${{ fea_receita }}</h1>
-        <h1>Despesa:: R${{ fea_despesa }}</h1>
-        <h1>IFCH:</h1>
-        <h1>Receita: R${{ ifch_receita }}</h1>
-        <h1>Despesa:: R${{ ifch_despesa }}</h1>
-        <h1>FEAGRI:</h1>
-        <h1>Receita: R${{ feagri_receita }}</h1>
-        <h1>Despesa:: R${{ feagri_despesa }}</h1>
-        <h1>IEL:</h1>
-        <h1>Receita: R${{ iel_receita }}</h1>
-        <h1>Despesa:: R${{ iel_despesa }}</h1>
-        <h1>IB:</h1>
-        <h1>Receita: R${{ ib_receita }}</h1>
-        <h1>Despesa:: R${{ ib_despesa }}</h1>
-        <h1>FEQ:</h1>
-        <h1>Receita: R${{ feq_receita }}</h1>
-        <h1>Despesa:: R${{ feq_despesa }}</h1>
-        <h1>FEEC:</h1>
-        <h1>Receita: R${{ feec_receita }}</h1>
-        <h1>Despesa:: R${{ feec_despesa }}</h1>
-        <h1>FENF:</h1>
-        <h1>Receita: R${{ fenf_receita }}</h1>
-        <h1>Despesa:: R${{ fenf_despesa }}</h1>
-        <h1>FEM:</h1>
-        <h1>Receita: R${{ fem_receita }}</h1>
-        <h1>Despesa:: R${{ fem_despesa }}</h1>
-        <h1>IQ:</h1>
-        <h1>Receita: R${{ iq_receita }}</h1>
-        <h1>Despesa:: R${{ iq_despesa }}</h1>
-        <h1>IC:</h1>
-        <h1>Receita: R${{ ic_receita }}</h1>
-        <h1>Despesa:: R${{ ic_despesa }}</h1>
+        <div class="col-sm-4">
+            <img src="/home/ruy/Code/Django/Caqui/Caqui/Caqui/Caqui/static/img/plot/tel.png" width=800 height=470 alt="Trocar Imagem!"/>
+        </div>
+        
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   </body>
 </html>
