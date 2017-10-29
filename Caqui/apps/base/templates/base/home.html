@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">    
+
+  </head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+
+      <style>
+        /* custom classes */
+
+        /* backgrounds */
+        .bg-green {
+          background-color: #1abc9c; /* Green */
+          color: #ffffff;
+          }
+        .bg-darkblue {
+          background-color: #474e5d; /* Dark Blue */
+          color: #ffffff;
+          }
+        /* Remove the navbar's default margin-bottom and rounded    borders */ 
+        .navbar {
+          margin-bottom: 0;
+          border-radius: 0;
+        }
+        /* Set height of the grid so .sidenav can be 100% (adjust as    needed) */
+        .row.content {height: 450px}        
+        /* Set gray background color and 100% height */
+        .sidenav {
+          padding-top: 20px;
+          background-color: #f1f1f1;
+          height: 100%;
+        }
+        /* Set black background color, white text and some padding */
+        footer {
+          background-color: #555;
+          color: white;
+          padding: 15px;
+        }
+        /* On small screens, set height to 'auto' for sidenav and     grid */
+        @media screen and (max-width: 767px) {
+          .sidenav {
+            height: auto;
+            padding: 15px;
+          }
+          .row.content {height:auto;} 
+        }
+
+      </style>
+
+  </head>
+
+
+  <body>
+
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+
+          <button type="button" class="navbar-toggle" data-toggle="   collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>                        
+          <a href="#" class="navbar-left"><img src="logo.png"></a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="dados.html">Dados</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <div class="page-header text-center">
+      <h1>Fechamento por Insitituto - 2016</h1>
+    </div>
+
+    <div class="jumbotron container-fluid text-center bg-green">
+
+      <h1>Descubra quanto e com que cada Instituto da Unicamp gastou em 2016</h1>
+
+          <div class="btn">
+
+            <a href="instituto/ib.html" class="btn btn-danger" role="button">IB</a>
+            <a href="instituto/iq.html" class="btn btn-danger" role="button">IQ</a>
+            <a href="instituto/ifgw.html" class="btn btn-danger" role="button">IFGW</a>
+            <a href="instituto/imecc.html" class="btn btn-danger" role="button">IMECC</a>
+            <a href="instituto/ifch.html" class="btn btn-danger" role="button">IFCH</a>
+            <a href="instituto/iel.html" class="btn btn-danger" role="button">IEL</a>
+            <a href="instituto/ig.html" class="btn btn-danger" role="button">IG</a>
+            <a href="instituto/fea.html" class="btn btn-danger" role="button">FEA</a>
+            <a href="instituto/feec.html" class="btn btn-danger" role="button">FEEC</a>
+            <a href="instituto/fem.html" class="btn btn-danger" role="button">FEM</a>
+            <a href="instituto/feagri.html" class="btn btn-danger" role="button">FEAGRI</a>
+            <a href="instituto/ic.html" class="btn btn-danger" role="button">IC</a>
+            <a href="instituto/feq.html" class="btn btn-danger" role="button">FEQ</a>
+            <a href="instituto/fenf.html" class="btn btn-danger" role="button">FENF</a>
+            <a href="instituto/fcm.html" class="btn btn-danger" role="button">FCM</a>
+
+        </div> 
+
+    </div>
+
+    <div class="jumbotron container-fluid bg-darkblue text-center">
+
+        <h1>Selecione a área de despesas e compare com outros Intitutos da Universidade</h1>
+
+          <div class="btn">
+
+            <a href="area/auxilio.html" class="btn btn-primary" role="button">Auxílio Estudantil</a>
+            <a href="area/biblioteca.html" class="btn btn-primary" role="button">Biblioteca</a>
+            <a href="area/correios.html" class="btn btn-primary" role="button">Corrreios</a>
+            <a href="area/despesas.html" class="btn btn-primary" role="button">Despesas</a>
+            <a href="area/centralizadas.html" class="btn btn-primary" role="button">Despesas Centralizada</a>
+            <a href="area/energia.html" class="btn btn-primary" role="button">Energia Elétrica</a>
+            <a href="area/estagiarios.html" class="btn btn-primary" role="button">Estagiários</a>
+
+        </div> 
+
+          <div class="btn">
+
+            <a href="area/obras.html" class="btn btn-primary" role="button">Obras e Instalções</a>
+            <a href="area/pessoal.html" class="btn btn-primary" role="button">Pessoal e Reflexos</a>
+            <a href="area/servicos.html" class="btn btn-primary" role="button">Serviços de Limpeza</a>
+            <a href="area/telefone.html" class="btn btn-primary" role="button">Telefone</a>
+            <a href="area/transporte.html" class="btn btn-primary" role="button">Transporte</a>
+            <a href="area/upa.html" class="btn btn-primary" role="button">UPA</a>
+
+          </div> 
+
+    </div> 
+
+
+    <div class="learn-more">
+	   <div class="container">
+		  <div class="row">
+
+	  	  <div class="col-md-4">
+			    <h3>Travel</h3>
+			    <p>From apartments and rooms to treehouses and boats: stay     in unique spaces in 192 countries.</p>
+			    <p><a href="#">See how to travel on Airbnb</a></p>
+		    </div>
+
+		    <div class="col-md-4">
+			    <h3>Host</h3>
+			    <p>Renting out your unused space could pay your bills or     fund your next vacation.</p>
+			    <p><a href="#">Learn more about hosting</a></p>
+	      </div>
+
+		    <div class="col-md-4">
+			    <h3>Trust and Safety</h3>
+			    <p>From Verified ID to our worldwide customer support team,    we've got your back.</p>
+			    <p><a href="#">Learn about trust at Airbnb</a></p>
+		    </div>
+
+	    </div>
+	  </div>
+	</div>
+
+
+  </body>
+</html>
