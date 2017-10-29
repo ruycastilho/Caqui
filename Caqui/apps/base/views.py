@@ -268,7 +268,7 @@ def servicos(request):
 def telefone(request):
     return render(request, 'base/area/telefone.html')
 
-def trasporte(request):
+def transporte(request):
     return render(request, 'base/area/transporte.html')
 
 def upa(request):
