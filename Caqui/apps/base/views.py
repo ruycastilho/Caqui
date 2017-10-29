@@ -58,3 +58,44 @@ def fcm(request):
 def dados(request):
     return render(request, 'base/instituto/dados.html')
 
+#-------------------------
+def auxilio(request):
+    return render(request, 'base/area/auxilio.html')
+
+def biblioteca(request):
+    return render(request, 'base/area/biblioteca.html')
+
+def centralizadas(request):
+    return render(request, 'base/area/centralizados.html')
+
+def correios(request):
+    return render(request, 'base/area/correios.html')
+
+def despesas(request):
+    return render(request, 'base/area/despesas.html')
+
+def energia(request):
+    return render(request, 'base/area/energia.html')
+
+def estagiarios(request):
+    return render(request, 'base/area/estagiarios.html')
+
+def obras(request):
+    return render(request, 'base/area/obras.html')
+
+def pessoal(request):
+    return render(request, 'base/area/pessoal.html')
+
+def servicos(request):
+    return render(request, 'base/area/servicos.html')
+
+def telefone(request):
+    return render(request, 'base/area/telefone.html')
+
+def trasporte(request):
+    return render(request, 'base/area/transporte.html')
+
+def upa(request):
+    return render(request, 'base/area/upa.html')
+
+
