@@ -236,42 +236,867 @@ def dados(request):
 
 #-------------------------
 def auxilio(request):
-    return render(request, 'base/area/auxilio.html')
+
+    query_data = {}
+
+    imecc_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=2).receita
+    imecc_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=2).despesa
+    query_data.update({'imecc_receita':imecc_receita, 'imecc_despesa':imecc_despesa})
+
+    ig_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=3).receita
+    ig_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=3).despesa
+    query_data.update({'ig_receita':ig_receita, 'ig_despesa':ig_despesa})
+
+    fcm_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=4).receita
+    fcm_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=4).despesa
+    query_data.update({'fcm_receita':fcm_receita, 'fcm_despesa':fcm_despesa})
+
+    ifgw_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=5).receita
+    ifgw_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=5).despesa
+    query_data.update({'ifgw_receita':ifgw_receita, 'ifgw_despesa':ifgw_despesa})
+
+    fea_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=6).receita
+    fea_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=6).despesa
+    query_data.update({'fea_receita':fea_receita, 'fea_despesa':fea_despesa})
+
+    ifch_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=7).receita
+    ifch_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=7).despesa
+    query_data.update({'ifch_receita':ifch_receita, 'ifch_despesa':ifch_despesa})
+
+    feagri_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=8).receita
+    feagri_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=8).despesa
+    query_data.update({'feagri_receita':feagri_receita, 'feagri_despesa':feagri_despesa})
+
+    iel_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=9).receita
+    iel_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=9).despesa
+    query_data.update({'iel_receita':iel_receita, 'iel_despesa':iel_despesa})
+
+    ib_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=10).receita
+    ib_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=10).despesa
+    query_data.update({'ib_receita':ib_receita, 'ib_despesa':ib_despesa})
+
+    feq_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=12).receita
+    feq_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=12).despesa
+    query_data.update({'feq_receita':feq_receita, 'feq_despesa':feq_despesa})
+
+    feec_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=13).receita
+    feec_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=13).despesa
+    query_data.update({'feec_receita':feec_receita, 'feec_despesa':feec_despesa})
+
+    fenf_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=14).receita
+    fenf_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=14).despesa
+    query_data.update({'fenf_receita':fenf_receita, 'fenf_despesa':fenf_despesa})
+
+    fem_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=15).receita
+    fem_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=15).despesa
+    query_data.update({'fem_receita':fem_receita, 'fem_despesa':fem_despesa})
+
+    iq_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=16).receita
+    iq_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=16).despesa
+    query_data.update({'iq_receita':iq_receita, 'iq_despesa':iq_despesa})
+
+    ic_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=17).receita
+    ic_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=17).despesa
+    query_data.update({'ic_receita':ic_receita, 'ic_despesa':ic_despesa})
+
+    return render(request, 'base/area/auxilio.html', query_data)
 
 def biblioteca(request):
+    '''
+    query_data = {}
+
+    imecc_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=2).receita
+    imecc_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=2).despesa
+    query_data.update({'imecc_receita':imecc_receita, 'imecc_despesa':imecc_despesa})
+
+    ig_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=3).receita
+    ig_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=3).despesa
+    query_data.update({'ig_receita':ig_receita, 'ig_despesa':ig_despesa})
+
+    fcm_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=4).receita
+    fcm_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=4).despesa
+    query_data.update({'fcm_receita':fcm_receita, 'fcm_despesa':fcm_despesa})
+
+    ifgw_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=5).receita
+    ifgw_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=5).despesa
+    query_data.update({'ifgw_receita':ifgw_receita, 'ifgw_despesa':ifgw_despesa})
+
+    fea_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=6).receita
+    fea_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=6).despesa
+    query_data.update({'fea_receita':fea_receita, 'fea_despesa':fea_despesa})
+
+    ifch_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=7).receita
+    ifch_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=7).despesa
+    query_data.update({'ifch_receita':ifch_receita, 'ifch_despesa':ifch_despesa})
+
+    feagri_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=8).receita
+    feagri_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=8).despesa
+    query_data.update({'feagri_receita':feagri_receita, 'feagri_despesa':feagri_despesa})
+
+    iel_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=9).receita
+    iel_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=9).despesa
+    query_data.update({'iel_receita':iel_receita, 'iel_despesa':iel_despesa})
+
+    ib_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=10).receita
+    ib_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=10).despesa
+    query_data.update({'ib_receita':ib_receita, 'ib_despesa':ib_despesa})
+
+    feq_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=12).receita
+    feq_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=12).despesa
+    query_data.update({'feq_receita':feq_receita, 'feq_despesa':feq_despesa})
+
+    feec_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=13).receita
+    feec_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=13).despesa
+    query_data.update({'feec_receita':feec_receita, 'feec_despesa':feec_despesa})
+
+    fenf_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=14).receita
+    fenf_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=14).despesa
+    query_data.update({'fenf_receita':fenf_receita, 'fenf_despesa':fenf_despesa})
+
+    fem_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=15).receita
+    fem_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=15).despesa
+    query_data.update({'fem_receita':fem_receita, 'fem_despesa':fem_despesa})
+
+    iq_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=16).receita
+    iq_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=16).despesa
+    query_data.update({'iq_receita':iq_receita, 'iq_despesa':iq_despesa})
+
+    ic_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=17).receita
+    ic_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=17).despesa
+    query_data.update({'ic_receita':ic_receita, 'ic_despesa':ic_despesa})
+
+    return render(request, 'base/area/biblioteca.html', query_data)
+    '''
     return render(request, 'base/area/biblioteca.html')
 
+
 def centralizadas(request):
-    return render(request, 'base/area/centralizados.html')
+
+    query_data = {}
+
+    imecc_receita = Despesas_Centralizadas.objects.all().get(id_instituicao=2).receita
+    imecc_despesa = Despesas_Centralizadas.objects.all().get(id_instituicao=2).despesa
+    query_data.update({'imecc_receita':imecc_receita, 'imecc_despesa':imecc_despesa})
+
+    ig_receita = Despesas_Centralizadas.objects.all().get(id_instituicao=3).receita
+    ig_despesa = Despesas_Centralizadas.objects.all().get(id_instituicao=3).despesa
+    query_data.update({'ig_receita':ig_receita, 'ig_despesa':ig_despesa})
+
+    fcm_receita = Despesas_Centralizadas.objects.all().get(id_instituicao=4).receita
+    fcm_despesa = Despesas_Centralizadas.objects.all().get(id_instituicao=4).despesa
+    query_data.update({'fcm_receita':fcm_receita, 'fcm_despesa':fcm_despesa})
+
+    ifgw_receita = Despesas_Centralizadas.objects.all().get(id_instituicao=5).receita
+    ifgw_despesa = Despesas_Centralizadas.objects.all().get(id_instituicao=5).despesa
+    query_data.update({'ifgw_receita':ifgw_receita, 'ifgw_despesa':ifgw_despesa})
+
+    fea_receita = Despesas_Centralizadas.objects.all().get(id_instituicao=6).receita
+    fea_despesa = Despesas_Centralizadas.objects.all().get(id_instituicao=6).despesa
+    query_data.update({'fea_receita':fea_receita, 'fea_despesa':fea_despesa})
+
+    ifch_receita = Despesas_Centralizadas.objects.all().get(id_instituicao=7).receita
+    ifch_despesa = Despesas_Centralizadas.objects.all().get(id_instituicao=7).despesa
+    query_data.update({'ifch_receita':ifch_receita, 'ifch_despesa':ifch_despesa})
+
+    feagri_receita = Despesas_Centralizadas.objects.all().get(id_instituicao=8).receita
+    feagri_despesa = Despesas_Centralizadas.objects.all().get(id_instituicao=8).despesa
+    query_data.update({'feagri_receita':feagri_receita, 'feagri_despesa':feagri_despesa})
+
+    iel_receita = Despesas_Centralizadas.objects.all().get(id_instituicao=9).receita
+    iel_despesa = Despesas_Centralizadas.objects.all().get(id_instituicao=9).despesa
+    query_data.update({'iel_receita':iel_receita, 'iel_despesa':iel_despesa})
+
+    ib_receita = Despesas_Centralizadas.objects.all().get(id_instituicao=10).receita
+    ib_despesa = Despesas_Centralizadas.objects.all().get(id_instituicao=10).despesa
+    query_data.update({'ib_receita':ib_receita, 'ib_despesa':ib_despesa})
+
+    feq_receita = Despesas_Centralizadas.objects.all().get(id_instituicao=12).receita
+    feq_despesa = Despesas_Centralizadas.objects.all().get(id_instituicao=12).despesa
+    query_data.update({'feq_receita':feq_receita, 'feq_despesa':feq_despesa})
+
+    feec_receita = Despesas_Centralizadas.objects.all().get(id_instituicao=13).receita
+    feec_despesa = Despesas_Centralizadas.objects.all().get(id_instituicao=13).despesa
+    query_data.update({'feec_receita':feec_receita, 'feec_despesa':feec_despesa})
+
+    fenf_receita = Despesas_Centralizadas.objects.all().get(id_instituicao=14).receita
+    fenf_despesa = Despesas_Centralizadas.objects.all().get(id_instituicao=14).despesa
+    query_data.update({'fenf_receita':fenf_receita, 'fenf_despesa':fenf_despesa})
+
+    fem_receita = Despesas_Centralizadas.objects.all().get(id_instituicao=15).receita
+    fem_despesa = Despesas_Centralizadas.objects.all().get(id_instituicao=15).despesa
+    query_data.update({'fem_receita':fem_receita, 'fem_despesa':fem_despesa})
+
+    iq_receita = Despesas_Centralizadas.objects.all().get(id_instituicao=16).receita
+    iq_despesa = Despesas_Centralizadas.objects.all().get(id_instituicao=16).despesa
+    query_data.update({'iq_receita':iq_receita, 'iq_despesa':iq_despesa})
+
+    ic_receita = Despesas_Centralizadas.objects.all().get(id_instituicao=17).receita
+    ic_despesa = Despesas_Centralizadas.objects.all().get(id_instituicao=17).despesa
+    query_data.update({'ic_receita':ic_receita, 'ic_despesa':ic_despesa})
+
+    return render(request, 'base/area/centralizadas.html', query_data)
 
 def correios(request):
-    return render(request, 'base/area/correios.html')
+
+    query_data = {}
+
+    imecc_receita = Correios.objects.all().get(id_instituicao=2).receita
+    imecc_despesa = Correios.objects.all().get(id_instituicao=2).despesa
+    query_data.update({'imecc_receita':imecc_receita, 'imecc_despesa':imecc_despesa})
+
+    ig_receita = Correios.objects.all().get(id_instituicao=3).receita
+    ig_despesa = Correios.objects.all().get(id_instituicao=3).despesa
+    query_data.update({'ig_receita':ig_receita, 'ig_despesa':ig_despesa})
+
+    fcm_receita = Correios.objects.all().get(id_instituicao=4).receita
+    fcm_despesa = Correios.objects.all().get(id_instituicao=4).despesa
+    query_data.update({'fcm_receita':fcm_receita, 'fcm_despesa':fcm_despesa})
+
+    ifgw_receita = Correios.objects.all().get(id_instituicao=5).receita
+    ifgw_despesa = Correios.objects.all().get(id_instituicao=5).despesa
+    query_data.update({'ifgw_receita':ifgw_receita, 'ifgw_despesa':ifgw_despesa})
+
+    fea_receita = Correios.objects.all().get(id_instituicao=6).receita
+    fea_despesa = Correios.objects.all().get(id_instituicao=6).despesa
+    query_data.update({'fea_receita':fea_receita, 'fea_despesa':fea_despesa})
+
+    ifch_receita = Correios.objects.all().get(id_instituicao=7).receita
+    ifch_despesa = Correios.objects.all().get(id_instituicao=7).despesa
+    query_data.update({'ifch_receita':ifch_receita, 'ifch_despesa':ifch_despesa})
+
+    feagri_receita = Correios.objects.all().get(id_instituicao=8).receita
+    feagri_despesa = Correios.objects.all().get(id_instituicao=8).despesa
+    query_data.update({'feagri_receita':feagri_receita, 'feagri_despesa':feagri_despesa})
+
+    iel_receita = Correios.objects.all().get(id_instituicao=9).receita
+    iel_despesa = Correios.objects.all().get(id_instituicao=9).despesa
+    query_data.update({'iel_receita':iel_receita, 'iel_despesa':iel_despesa})
+
+    ib_receita = Correios.objects.all().get(id_instituicao=10).receita
+    ib_despesa = Correios.objects.all().get(id_instituicao=10).despesa
+    query_data.update({'ib_receita':ib_receita, 'ib_despesa':ib_despesa})
+
+    feq_receita = Correios.objects.all().get(id_instituicao=12).receita
+    feq_despesa = Correios.objects.all().get(id_instituicao=12).despesa
+    query_data.update({'feq_receita':feq_receita, 'feq_despesa':feq_despesa})
+
+    feec_receita = Correios.objects.all().get(id_instituicao=13).receita
+    feec_despesa = Correios.objects.all().get(id_instituicao=13).despesa
+    query_data.update({'feec_receita':feec_receita, 'feec_despesa':feec_despesa})
+
+    fenf_receita = Correios.objects.all().get(id_instituicao=14).receita
+    fenf_despesa = Correios.objects.all().get(id_instituicao=14).despesa
+    query_data.update({'fenf_receita':fenf_receita, 'fenf_despesa':fenf_despesa})
+
+    fem_receita = Correios.objects.all().get(id_instituicao=15).receita
+    fem_despesa = Correios.objects.all().get(id_instituicao=15).despesa
+    query_data.update({'fem_receita':fem_receita, 'fem_despesa':fem_despesa})
+
+    iq_receita = Correios.objects.all().get(id_instituicao=16).receita
+    iq_despesa = Correios.objects.all().get(id_instituicao=16).despesa
+    query_data.update({'iq_receita':iq_receita, 'iq_despesa':iq_despesa})
+
+    ic_receita = Correios.objects.all().get(id_instituicao=17).receita
+    ic_despesa = Correios.objects.all().get(id_instituicao=17).despesa
+    query_data.update({'ic_receita':ic_receita, 'ic_despesa':ic_despesa})
+
+    return render(request, 'base/area/correios.html', query_data)
 
 def despesas(request):
+    '''
+    query_data = {}
+
+    imecc_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=2).receita
+    imecc_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=2).despesa
+    query_data.update({'imecc_receita':imecc_receita, 'imecc_despesa':imecc_despesa})
+
+    ig_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=3).receita
+    ig_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=3).despesa
+    query_data.update({'ig_receita':ig_receita, 'ig_despesa':ig_despesa})
+
+    fcm_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=4).receita
+    fcm_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=4).despesa
+    query_data.update({'fcm_receita':fcm_receita, 'fcm_despesa':fcm_despesa})
+
+    ifgw_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=5).receita
+    ifgw_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=5).despesa
+    query_data.update({'ifgw_receita':ifgw_receita, 'ifgw_despesa':ifgw_despesa})
+
+    fea_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=6).receita
+    fea_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=6).despesa
+    query_data.update({'fea_receita':fea_receita, 'fea_despesa':fea_despesa})
+
+    ifch_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=7).receita
+    ifch_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=7).despesa
+    query_data.update({'ifch_receita':ifch_receita, 'ifch_despesa':ifch_despesa})
+
+    feagri_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=8).receita
+    feagri_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=8).despesa
+    query_data.update({'feagri_receita':feagri_receita, 'feagri_despesa':feagri_despesa})
+
+    iel_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=9).receita
+    iel_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=9).despesa
+    query_data.update({'iel_receita':iel_receita, 'iel_despesa':iel_despesa})
+
+    ib_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=10).receita
+    ib_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=10).despesa
+    query_data.update({'ib_receita':ib_receita, 'ib_despesa':ib_despesa})
+
+    feq_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=12).receita
+    feq_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=12).despesa
+    query_data.update({'feq_receita':feq_receita, 'feq_despesa':feq_despesa})
+
+    feec_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=13).receita
+    feec_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=13).despesa
+    query_data.update({'feec_receita':feec_receita, 'feec_despesa':feec_despesa})
+
+    fenf_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=14).receita
+    fenf_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=14).despesa
+    query_data.update({'fenf_receita':fenf_receita, 'fenf_despesa':fenf_despesa})
+
+    fem_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=15).receita
+    fem_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=15).despesa
+    query_data.update({'fem_receita':fem_receita, 'fem_despesa':fem_despesa})
+
+    iq_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=16).receita
+    iq_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=16).despesa
+    query_data.update({'iq_receita':iq_receita, 'iq_despesa':iq_despesa})
+
+    ic_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=17).receita
+    ic_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=17).despesa
+    query_data.update({'ic_receita':ic_receita, 'ic_despesa':ic_despesa})
+
+    return render(request, 'base/area/despesas.html', query_data)
+    ''' 
     return render(request, 'base/area/despesas.html')
 
+
 def energia(request):
-    return render(request, 'base/area/energia.html')
+
+    query_data = {}
+
+    imecc_receita = Energia_Eletrica.objects.all().get(id_instituicao=2).receita
+    imecc_despesa = Energia_Eletrica.objects.all().get(id_instituicao=2).despesa
+    query_data.update({'imecc_receita':imecc_receita, 'imecc_despesa':imecc_despesa})
+
+    ig_receita = Energia_Eletrica.objects.all().get(id_instituicao=3).receita
+    ig_despesa = Energia_Eletrica.objects.all().get(id_instituicao=3).despesa
+    query_data.update({'ig_receita':ig_receita, 'ig_despesa':ig_despesa})
+
+    fcm_receita = Energia_Eletrica.objects.all().get(id_instituicao=4).receita
+    fcm_despesa = Energia_Eletrica.objects.all().get(id_instituicao=4).despesa
+    query_data.update({'fcm_receita':fcm_receita, 'fcm_despesa':fcm_despesa})
+
+    ifgw_receita = Energia_Eletrica.objects.all().get(id_instituicao=5).receita
+    ifgw_despesa = Energia_Eletrica.objects.all().get(id_instituicao=5).despesa
+    query_data.update({'ifgw_receita':ifgw_receita, 'ifgw_despesa':ifgw_despesa})
+
+    fea_receita = Energia_Eletrica.objects.all().get(id_instituicao=6).receita
+    fea_despesa = Energia_Eletrica.objects.all().get(id_instituicao=6).despesa
+    query_data.update({'fea_receita':fea_receita, 'fea_despesa':fea_despesa})
+
+    ifch_receita = Energia_Eletrica.objects.all().get(id_instituicao=7).receita
+    ifch_despesa = Energia_Eletrica.objects.all().get(id_instituicao=7).despesa
+    query_data.update({'ifch_receita':ifch_receita, 'ifch_despesa':ifch_despesa})
+
+    feagri_receita = Energia_Eletrica.objects.all().get(id_instituicao=8).receita
+    feagri_despesa = Energia_Eletrica.objects.all().get(id_instituicao=8).despesa
+    query_data.update({'feagri_receita':feagri_receita, 'feagri_despesa':feagri_despesa})
+
+    iel_receita = Energia_Eletrica.objects.all().get(id_instituicao=9).receita
+    iel_despesa = Energia_Eletrica.objects.all().get(id_instituicao=9).despesa
+    query_data.update({'iel_receita':iel_receita, 'iel_despesa':iel_despesa})
+
+    ib_receita = Energia_Eletrica.objects.all().get(id_instituicao=10).receita
+    ib_despesa = Energia_Eletrica.objects.all().get(id_instituicao=10).despesa
+    query_data.update({'ib_receita':ib_receita, 'ib_despesa':ib_despesa})
+
+    feq_receita = Energia_Eletrica.objects.all().get(id_instituicao=12).receita
+    feq_despesa = Energia_Eletrica.objects.all().get(id_instituicao=12).despesa
+    query_data.update({'feq_receita':feq_receita, 'feq_despesa':feq_despesa})
+
+    feec_receita = Energia_Eletrica.objects.all().get(id_instituicao=13).receita
+    feec_despesa = Energia_Eletrica.objects.all().get(id_instituicao=13).despesa
+    query_data.update({'feec_receita':feec_receita, 'feec_despesa':feec_despesa})
+
+    fenf_receita = Energia_Eletrica.objects.all().get(id_instituicao=14).receita
+    fenf_despesa = Energia_Eletrica.objects.all().get(id_instituicao=14).despesa
+    query_data.update({'fenf_receita':fenf_receita, 'fenf_despesa':fenf_despesa})
+
+    fem_receita = Energia_Eletrica.objects.all().get(id_instituicao=15).receita
+    fem_despesa = Energia_Eletrica.objects.all().get(id_instituicao=15).despesa
+    query_data.update({'fem_receita':fem_receita, 'fem_despesa':fem_despesa})
+
+    iq_receita = Energia_Eletrica.objects.all().get(id_instituicao=16).receita
+    iq_despesa = Energia_Eletrica.objects.all().get(id_instituicao=16).despesa
+    query_data.update({'iq_receita':iq_receita, 'iq_despesa':iq_despesa})
+
+    ic_receita = Energia_Eletrica.objects.all().get(id_instituicao=17).receita
+    ic_despesa = Energia_Eletrica.objects.all().get(id_instituicao=17).despesa
+    query_data.update({'ic_receita':ic_receita, 'ic_despesa':ic_despesa})
+
+    return render(request, 'base/area/energia.html', query_data)
 
 def estagiarios(request):
-    return render(request, 'base/area/estagiarios.html')
+
+    query_data = {}
+
+    imecc_receita = Estagiarios.objects.all().get(id_instituicao=2).receita
+    imecc_despesa = Estagiarios.objects.all().get(id_instituicao=2).despesa
+    query_data.update({'imecc_receita':imecc_receita, 'imecc_despesa':imecc_despesa})
+
+    ig_receita = Estagiarios.objects.all().get(id_instituicao=3).receita
+    ig_despesa = Estagiarios.objects.all().get(id_instituicao=3).despesa
+    query_data.update({'ig_receita':ig_receita, 'ig_despesa':ig_despesa})
+
+    fcm_receita = Estagiarios.objects.all().get(id_instituicao=4).receita
+    fcm_despesa = Estagiarios.objects.all().get(id_instituicao=4).despesa
+    query_data.update({'fcm_receita':fcm_receita, 'fcm_despesa':fcm_despesa})
+
+    ifgw_receita = Estagiarios.objects.all().get(id_instituicao=5).receita
+    ifgw_despesa = Estagiarios.objects.all().get(id_instituicao=5).despesa
+    query_data.update({'ifgw_receita':ifgw_receita, 'ifgw_despesa':ifgw_despesa})
+
+    fea_receita = Estagiarios.objects.all().get(id_instituicao=6).receita
+    fea_despesa = Estagiarios.objects.all().get(id_instituicao=6).despesa
+    query_data.update({'fea_receita':fea_receita, 'fea_despesa':fea_despesa})
+
+    ifch_receita = Estagiarios.objects.all().get(id_instituicao=7).receita
+    ifch_despesa = Estagiarios.objects.all().get(id_instituicao=7).despesa
+    query_data.update({'ifch_receita':ifch_receita, 'ifch_despesa':ifch_despesa})
+
+    feagri_receita = Estagiarios.objects.all().get(id_instituicao=8).receita
+    feagri_despesa = Estagiarios.objects.all().get(id_instituicao=8).despesa
+    query_data.update({'feagri_receita':feagri_receita, 'feagri_despesa':feagri_despesa})
+
+    iel_receita = Estagiarios.objects.all().get(id_instituicao=9).receita
+    iel_despesa = Estagiarios.objects.all().get(id_instituicao=9).despesa
+    query_data.update({'iel_receita':iel_receita, 'iel_despesa':iel_despesa})
+
+    ib_receita = Estagiarios.objects.all().get(id_instituicao=10).receita
+    ib_despesa = Estagiarios.objects.all().get(id_instituicao=10).despesa
+    query_data.update({'ib_receita':ib_receita, 'ib_despesa':ib_despesa})
+
+    feq_receita = Estagiarios.objects.all().get(id_instituicao=12).receita
+    feq_despesa = Estagiarios.objects.all().get(id_instituicao=12).despesa
+    query_data.update({'feq_receita':feq_receita, 'feq_despesa':feq_despesa})
+
+    feec_receita = Estagiarios.objects.all().get(id_instituicao=13).receita
+    feec_despesa = Estagiarios.objects.all().get(id_instituicao=13).despesa
+    query_data.update({'feec_receita':feec_receita, 'feec_despesa':feec_despesa})
+
+    fenf_receita = Estagiarios.objects.all().get(id_instituicao=14).receita
+    fenf_despesa = Estagiarios.objects.all().get(id_instituicao=14).despesa
+    query_data.update({'fenf_receita':fenf_receita, 'fenf_despesa':fenf_despesa})
+
+    fem_receita = Estagiarios.objects.all().get(id_instituicao=15).receita
+    fem_despesa = Estagiarios.objects.all().get(id_instituicao=15).despesa
+    query_data.update({'fem_receita':fem_receita, 'fem_despesa':fem_despesa})
+
+    iq_receita = Estagiarios.objects.all().get(id_instituicao=16).receita
+    iq_despesa = Estagiarios.objects.all().get(id_instituicao=16).despesa
+    query_data.update({'iq_receita':iq_receita, 'iq_despesa':iq_despesa})
+
+    ic_receita = Estagiarios.objects.all().get(id_instituicao=17).receita
+    ic_despesa = Estagiarios.objects.all().get(id_instituicao=17).despesa
+    query_data.update({'ic_receita':ic_receita, 'ic_despesa':ic_despesa}) 
+
+    return render(request, 'base/area/estagiarios.html', query_data)
 
 def obras(request):
-    return render(request, 'base/area/obras.html')
+
+    query_data = {}
+
+    imecc_receita = Obras_e_Instalacoes.objects.all().get(id_instituicao=2).receita
+    imecc_despesa = Obras_e_Instalacoes.objects.all().get(id_instituicao=2).despesa
+    query_data.update({'imecc_receita':imecc_receita, 'imecc_despesa':imecc_despesa})
+
+    ig_receita = Obras_e_Instalacoes.objects.all().get(id_instituicao=3).receita
+    ig_despesa = Obras_e_Instalacoes.objects.all().get(id_instituicao=3).despesa
+    query_data.update({'ig_receita':ig_receita, 'ig_despesa':ig_despesa})
+
+    fcm_receita = Obras_e_Instalacoes.objects.all().get(id_instituicao=4).receita
+    fcm_despesa = Obras_e_Instalacoes.objects.all().get(id_instituicao=4).despesa
+    query_data.update({'fcm_receita':fcm_receita, 'fcm_despesa':fcm_despesa})
+
+    ifgw_receita = Obras_e_Instalacoes.objects.all().get(id_instituicao=5).receita
+    ifgw_despesa = Obras_e_Instalacoes.objects.all().get(id_instituicao=5).despesa
+    query_data.update({'ifgw_receita':ifgw_receita, 'ifgw_despesa':ifgw_despesa})
+
+    fea_receita = Obras_e_Instalacoes.objects.all().get(id_instituicao=6).receita
+    fea_despesa = Obras_e_Instalacoes.objects.all().get(id_instituicao=6).despesa
+    query_data.update({'fea_receita':fea_receita, 'fea_despesa':fea_despesa})
+
+    ifch_receita = Obras_e_Instalacoes.objects.all().get(id_instituicao=7).receita
+    ifch_despesa = Obras_e_Instalacoes.objects.all().get(id_instituicao=7).despesa
+    query_data.update({'ifch_receita':ifch_receita, 'ifch_despesa':ifch_despesa})
+
+    feagri_receita = Obras_e_Instalacoes.objects.all().get(id_instituicao=8).receita
+    feagri_despesa = Obras_e_Instalacoes.objects.all().get(id_instituicao=8).despesa
+    query_data.update({'feagri_receita':feagri_receita, 'feagri_despesa':feagri_despesa})
+
+    iel_receita = Obras_e_Instalacoes.objects.all().get(id_instituicao=9).receita
+    iel_despesa = Obras_e_Instalacoes.objects.all().get(id_instituicao=9).despesa
+    query_data.update({'iel_receita':iel_receita, 'iel_despesa':iel_despesa})
+
+    ib_receita = Obras_e_Instalacoes.objects.all().get(id_instituicao=10).receita
+    ib_despesa = Obras_e_Instalacoes.objects.all().get(id_instituicao=10).despesa
+    query_data.update({'ib_receita':ib_receita, 'ib_despesa':ib_despesa})
+
+    feq_receita = Obras_e_Instalacoes.objects.all().get(id_instituicao=12).receita
+    feq_despesa = Obras_e_Instalacoes.objects.all().get(id_instituicao=12).despesa
+    query_data.update({'feq_receita':feq_receita, 'feq_despesa':feq_despesa})
+
+    feec_receita = Obras_e_Instalacoes.objects.all().get(id_instituicao=13).receita
+    feec_despesa = Obras_e_Instalacoes.objects.all().get(id_instituicao=13).despesa
+    query_data.update({'feec_receita':feec_receita, 'feec_despesa':feec_despesa})
+
+    fenf_receita = Obras_e_Instalacoes.objects.all().get(id_instituicao=14).receita
+    fenf_despesa = Obras_e_Instalacoes.objects.all().get(id_instituicao=14).despesa
+    query_data.update({'fenf_receita':fenf_receita, 'fenf_despesa':fenf_despesa})
+
+    fem_receita = Obras_e_Instalacoes.objects.all().get(id_instituicao=15).receita
+    fem_despesa = Obras_e_Instalacoes.objects.all().get(id_instituicao=15).despesa
+    query_data.update({'fem_receita':fem_receita, 'fem_despesa':fem_despesa})
+
+    iq_receita = Obras_e_Instalacoes.objects.all().get(id_instituicao=16).receita
+    iq_despesa = Obras_e_Instalacoes.objects.all().get(id_instituicao=16).despesa
+    query_data.update({'iq_receita':iq_receita, 'iq_despesa':iq_despesa})
+
+    ic_receita = Obras_e_Instalacoes.objects.all().get(id_instituicao=17).receita
+    ic_despesa = Obras_e_Instalacoes.objects.all().get(id_instituicao=17).despesa
+    query_data.update({'ic_receita':ic_receita, 'ic_despesa':ic_despesa})
+
+    return render(request, 'base/area/obras.html', query_data)
 
 def pessoal(request):
-    return render(request, 'base/area/pessoal.html')
+
+    query_data = {}
+
+    imecc_receita = Pessoal_e_Reflexos.objects.all().get(id_instituicao=2).receita
+    imecc_despesa = Pessoal_e_Reflexos.objects.all().get(id_instituicao=2).despesa
+    query_data.update({'imecc_receita':imecc_receita, 'imecc_despesa':imecc_despesa})
+
+    ig_receita = Pessoal_e_Reflexos.objects.all().get(id_instituicao=3).receita
+    ig_despesa = Pessoal_e_Reflexos.objects.all().get(id_instituicao=3).despesa
+    query_data.update({'ig_receita':ig_receita, 'ig_despesa':ig_despesa})
+
+    fcm_receita = Pessoal_e_Reflexos.objects.all().get(id_instituicao=4).receita
+    fcm_despesa = Pessoal_e_Reflexos.objects.all().get(id_instituicao=4).despesa
+    query_data.update({'fcm_receita':fcm_receita, 'fcm_despesa':fcm_despesa})
+
+    ifgw_receita = Pessoal_e_Reflexos.objects.all().get(id_instituicao=5).receita
+    ifgw_despesa = Pessoal_e_Reflexos.objects.all().get(id_instituicao=5).despesa
+    query_data.update({'ifgw_receita':ifgw_receita, 'ifgw_despesa':ifgw_despesa})
+
+    fea_receita = Pessoal_e_Reflexos.objects.all().get(id_instituicao=6).receita
+    fea_despesa = Pessoal_e_Reflexos.objects.all().get(id_instituicao=6).despesa
+    query_data.update({'fea_receita':fea_receita, 'fea_despesa':fea_despesa})
+
+    ifch_receita = Pessoal_e_Reflexos.objects.all().get(id_instituicao=7).receita
+    ifch_despesa = Pessoal_e_Reflexos.objects.all().get(id_instituicao=7).despesa
+    query_data.update({'ifch_receita':ifch_receita, 'ifch_despesa':ifch_despesa})
+
+    feagri_receita = Pessoal_e_Reflexos.objects.all().get(id_instituicao=8).receita
+    feagri_despesa = Pessoal_e_Reflexos.objects.all().get(id_instituicao=8).despesa
+    query_data.update({'feagri_receita':feagri_receita, 'feagri_despesa':feagri_despesa})
+
+    iel_receita = Pessoal_e_Reflexos.objects.all().get(id_instituicao=9).receita
+    iel_despesa = Pessoal_e_Reflexos.objects.all().get(id_instituicao=9).despesa
+    query_data.update({'iel_receita':iel_receita, 'iel_despesa':iel_despesa})
+
+    ib_receita = Pessoal_e_Reflexos.objects.all().get(id_instituicao=10).receita
+    ib_despesa = Pessoal_e_Reflexos.objects.all().get(id_instituicao=10).despesa
+    query_data.update({'ib_receita':ib_receita, 'ib_despesa':ib_despesa})
+
+    feq_receita = Pessoal_e_Reflexos.objects.all().get(id_instituicao=12).receita
+    feq_despesa = Pessoal_e_Reflexos.objects.all().get(id_instituicao=12).despesa
+    query_data.update({'feq_receita':feq_receita, 'feq_despesa':feq_despesa})
+
+    feec_receita = Pessoal_e_Reflexos.objects.all().get(id_instituicao=13).receita
+    feec_despesa = Pessoal_e_Reflexos.objects.all().get(id_instituicao=13).despesa
+    query_data.update({'feec_receita':feec_receita, 'feec_despesa':feec_despesa})
+
+    fenf_receita = Pessoal_e_Reflexos.objects.all().get(id_instituicao=14).receita
+    fenf_despesa = Pessoal_e_Reflexos.objects.all().get(id_instituicao=14).despesa
+    query_data.update({'fenf_receita':fenf_receita, 'fenf_despesa':fenf_despesa})
+
+    fem_receita = Pessoal_e_Reflexos.objects.all().get(id_instituicao=15).receita
+    fem_despesa = Pessoal_e_Reflexos.objects.all().get(id_instituicao=15).despesa
+    query_data.update({'fem_receita':fem_receita, 'fem_despesa':fem_despesa})
+
+    iq_receita = Pessoal_e_Reflexos.objects.all().get(id_instituicao=16).receita
+    iq_despesa = Pessoal_e_Reflexos.objects.all().get(id_instituicao=16).despesa
+    query_data.update({'iq_receita':iq_receita, 'iq_despesa':iq_despesa})
+
+    ic_receita = Pessoal_e_Reflexos.objects.all().get(id_instituicao=17).receita
+    ic_despesa = Pessoal_e_Reflexos.objects.all().get(id_instituicao=17).despesa
+    query_data.update({'ic_receita':ic_receita, 'ic_despesa':ic_despesa})
+
+    return render(request, 'base/area/pessoal.html', query_data)
 
 def servicos(request):
-    return render(request, 'base/area/servicos.html')
+
+    query_data = {}
+
+    imecc_receita = Servico_de_Limpeza.objects.all().get(id_instituicao=2).receita
+    imecc_despesa = Servico_de_Limpeza.objects.all().get(id_instituicao=2).despesa
+    query_data.update({'imecc_receita':imecc_receita, 'imecc_despesa':imecc_despesa})
+
+    ig_receita = Servico_de_Limpeza.objects.all().get(id_instituicao=3).receita
+    ig_despesa = Servico_de_Limpeza.objects.all().get(id_instituicao=3).despesa
+    query_data.update({'ig_receita':ig_receita, 'ig_despesa':ig_despesa})
+
+    fcm_receita = Servico_de_Limpeza.objects.all().get(id_instituicao=4).receita
+    fcm_despesa = Servico_de_Limpeza.objects.all().get(id_instituicao=4).despesa
+    query_data.update({'fcm_receita':fcm_receita, 'fcm_despesa':fcm_despesa})
+
+    ifgw_receita = Servico_de_Limpeza.objects.all().get(id_instituicao=5).receita
+    ifgw_despesa = Servico_de_Limpeza.objects.all().get(id_instituicao=5).despesa
+    query_data.update({'ifgw_receita':ifgw_receita, 'ifgw_despesa':ifgw_despesa})
+
+    fea_receita = Servico_de_Limpeza.objects.all().get(id_instituicao=6).receita
+    fea_despesa = Servico_de_Limpeza.objects.all().get(id_instituicao=6).despesa
+    query_data.update({'fea_receita':fea_receita, 'fea_despesa':fea_despesa})
+
+    ifch_receita = Servico_de_Limpeza.objects.all().get(id_instituicao=7).receita
+    ifch_despesa = Servico_de_Limpeza.objects.all().get(id_instituicao=7).despesa
+    query_data.update({'ifch_receita':ifch_receita, 'ifch_despesa':ifch_despesa})
+
+    feagri_receita = Servico_de_Limpeza.objects.all().get(id_instituicao=8).receita
+    feagri_despesa = Servico_de_Limpeza.objects.all().get(id_instituicao=8).despesa
+    query_data.update({'feagri_receita':feagri_receita, 'feagri_despesa':feagri_despesa})
+
+    iel_receita = Servico_de_Limpeza.objects.all().get(id_instituicao=9).receita
+    iel_despesa = Servico_de_Limpeza.objects.all().get(id_instituicao=9).despesa
+    query_data.update({'iel_receita':iel_receita, 'iel_despesa':iel_despesa})
+
+    ib_receita = Servico_de_Limpeza.objects.all().get(id_instituicao=10).receita
+    ib_despesa = Servico_de_Limpeza.objects.all().get(id_instituicao=10).despesa
+    query_data.update({'ib_receita':ib_receita, 'ib_despesa':ib_despesa})
+
+    feq_receita = Servico_de_Limpeza.objects.all().get(id_instituicao=12).receita
+    feq_despesa = Servico_de_Limpeza.objects.all().get(id_instituicao=12).despesa
+    query_data.update({'feq_receita':feq_receita, 'feq_despesa':feq_despesa})
+
+    feec_receita = Servico_de_Limpeza.objects.all().get(id_instituicao=13).receita
+    feec_despesa = Servico_de_Limpeza.objects.all().get(id_instituicao=13).despesa
+    query_data.update({'feec_receita':feec_receita, 'feec_despesa':feec_despesa})
+
+    fenf_receita = Servico_de_Limpeza.objects.all().get(id_instituicao=14).receita
+    fenf_despesa = Servico_de_Limpeza.objects.all().get(id_instituicao=14).despesa
+    query_data.update({'fenf_receita':fenf_receita, 'fenf_despesa':fenf_despesa})
+
+    fem_receita = Servico_de_Limpeza.objects.all().get(id_instituicao=15).receita
+    fem_despesa = Servico_de_Limpeza.objects.all().get(id_instituicao=15).despesa
+    query_data.update({'fem_receita':fem_receita, 'fem_despesa':fem_despesa})
+
+    iq_receita = Servico_de_Limpeza.objects.all().get(id_instituicao=16).receita
+    iq_despesa = Servico_de_Limpeza.objects.all().get(id_instituicao=16).despesa
+    query_data.update({'iq_receita':iq_receita, 'iq_despesa':iq_despesa})
+
+    ic_receita = Servico_de_Limpeza.objects.all().get(id_instituicao=17).receita
+    ic_despesa = Servico_de_Limpeza.objects.all().get(id_instituicao=17).despesa
+    query_data.update({'ic_receita':ic_receita, 'ic_despesa':ic_despesa})
+
+    return render(request, 'base/area/servicos.html', query_data)
 
 def telefone(request):
-    return render(request, 'base/area/telefone.html')
+
+    query_data = {}
+    imecc_receita = Telefone.objects.all().get(id_instituicao=2).receita
+    imecc_despesa = Telefone.objects.all().get(id_instituicao=2).despesa
+    query_data.update({'imecc_receita':imecc_receita, 'imecc_despesa':imecc_despesa})
+
+    ig_receita = Telefone.objects.all().get(id_instituicao=3).receita
+    ig_despesa = Telefone.objects.all().get(id_instituicao=3).despesa
+    query_data.update({'ig_receita':ig_receita, 'ig_despesa':ig_despesa})
+
+    fcm_receita = Telefone.objects.all().get(id_instituicao=4).receita
+    fcm_despesa = Telefone.objects.all().get(id_instituicao=4).despesa
+    query_data.update({'fcm_receita':fcm_receita, 'fcm_despesa':fcm_despesa})
+
+    ifgw_receita = Telefone.objects.all().get(id_instituicao=5).receita
+    ifgw_despesa = Telefone.objects.all().get(id_instituicao=5).despesa
+    query_data.update({'ifgw_receita':ifgw_receita, 'ifgw_despesa':ifgw_despesa})
+
+    fea_receita = Telefone.objects.all().get(id_instituicao=6).receita
+    fea_despesa = Telefone.objects.all().get(id_instituicao=6).despesa
+    query_data.update({'fea_receita':fea_receita, 'fea_despesa':fea_despesa})
+
+    ifch_receita = Telefone.objects.all().get(id_instituicao=7).receita
+    ifch_despesa = Telefone.objects.all().get(id_instituicao=7).despesa
+    query_data.update({'ifch_receita':ifch_receita, 'ifch_despesa':ifch_despesa})
+
+    feagri_receita = Telefone.objects.all().get(id_instituicao=8).receita
+    feagri_despesa = Telefone.objects.all().get(id_instituicao=8).despesa
+    query_data.update({'feagri_receita':feagri_receita, 'feagri_despesa':feagri_despesa})
+
+    iel_receita = Telefone.objects.all().get(id_instituicao=9).receita
+    iel_despesa = Telefone.objects.all().get(id_instituicao=9).despesa
+    query_data.update({'iel_receita':iel_receita, 'iel_despesa':iel_despesa})
+
+    ib_receita = Telefone.objects.all().get(id_instituicao=10).receita
+    ib_despesa = Telefone.objects.all().get(id_instituicao=10).despesa
+    query_data.update({'ib_receita':ib_receita, 'ib_despesa':ib_despesa})
+
+    feq_receita = Telefone.objects.all().get(id_instituicao=12).receita
+    feq_despesa = Telefone.objects.all().get(id_instituicao=12).despesa
+    query_data.update({'feq_receita':feq_receita, 'feq_despesa':feq_despesa})
+
+    feec_receita = Telefone.objects.all().get(id_instituicao=13).receita
+    feec_despesa = Telefone.objects.all().get(id_instituicao=13).despesa
+    query_data.update({'feec_receita':feec_receita, 'feec_despesa':feec_despesa})
+
+    fenf_receita = Telefone.objects.all().get(id_instituicao=14).receita
+    fenf_despesa = Telefone.objects.all().get(id_instituicao=14).despesa
+    query_data.update({'fenf_receita':fenf_receita, 'fenf_despesa':fenf_despesa})
+
+    fem_receita = Telefone.objects.all().get(id_instituicao=15).receita
+    fem_despesa = Telefone.objects.all().get(id_instituicao=15).despesa
+    query_data.update({'fem_receita':fem_receita, 'fem_despesa':fem_despesa})
+
+    iq_receita = Telefone.objects.all().get(id_instituicao=16).receita
+    iq_despesa = Telefone.objects.all().get(id_instituicao=16).despesa
+    query_data.update({'iq_receita':iq_receita, 'iq_despesa':iq_despesa})
+
+    ic_receita = Telefone.objects.all().get(id_instituicao=17).receita
+    ic_despesa = Telefone.objects.all().get(id_instituicao=17).despesa
+    query_data.update({'ic_receita':ic_receita, 'ic_despesa':ic_despesa})
+
+    return render(request, 'base/area/telefone.html', query_data)
 
 def transporte(request):
-    return render(request, 'base/area/transporte.html')
+
+    query_data = {}
+
+    imecc_receita = Transporte.objects.all().get(id_instituicao=2).receita
+    imecc_despesa = Transporte.objects.all().get(id_instituicao=2).despesa
+    query_data.update({'imecc_receita':imecc_receita, 'imecc_despesa':imecc_despesa})
+
+    ig_receita = Transporte.objects.all().get(id_instituicao=3).receita
+    ig_despesa = Transporte.objects.all().get(id_instituicao=3).despesa
+    query_data.update({'ig_receita':ig_receita, 'ig_despesa':ig_despesa})
+
+    fcm_receita = Transporte.objects.all().get(id_instituicao=4).receita
+    fcm_despesa = Transporte.objects.all().get(id_instituicao=4).despesa
+    query_data.update({'fcm_receita':fcm_receita, 'fcm_despesa':fcm_despesa})
+
+    ifgw_receita = Transporte.objects.all().get(id_instituicao=5).receita
+    ifgw_despesa = Transporte.objects.all().get(id_instituicao=5).despesa
+    query_data.update({'ifgw_receita':ifgw_receita, 'ifgw_despesa':ifgw_despesa})
+
+    fea_receita = Transporte.objects.all().get(id_instituicao=6).receita
+    fea_despesa = Transporte.objects.all().get(id_instituicao=6).despesa
+    query_data.update({'fea_receita':fea_receita, 'fea_despesa':fea_despesa})
+
+    ifch_receita = Transporte.objects.all().get(id_instituicao=7).receita
+    ifch_despesa = Transporte.objects.all().get(id_instituicao=7).despesa
+    query_data.update({'ifch_receita':ifch_receita, 'ifch_despesa':ifch_despesa})
+
+    feagri_receita = Transporte.objects.all().get(id_instituicao=8).receita
+    feagri_despesa = Transporte.objects.all().get(id_instituicao=8).despesa
+    query_data.update({'feagri_receita':feagri_receita, 'feagri_despesa':feagri_despesa})
+
+    iel_receita = Transporte.objects.all().get(id_instituicao=9).receita
+    iel_despesa = Transporte.objects.all().get(id_instituicao=9).despesa
+    query_data.update({'iel_receita':iel_receita, 'iel_despesa':iel_despesa})
+
+    ib_receita = Transporte.objects.all().get(id_instituicao=10).receita
+    ib_despesa = Transporte.objects.all().get(id_instituicao=10).despesa
+    query_data.update({'ib_receita':ib_receita, 'ib_despesa':ib_despesa})
+
+    feq_receita = Transporte.objects.all().get(id_instituicao=12).receita
+    feq_despesa = Transporte.objects.all().get(id_instituicao=12).despesa
+    query_data.update({'feq_receita':feq_receita, 'feq_despesa':feq_despesa})
+
+    feec_receita = Transporte.objects.all().get(id_instituicao=13).receita
+    feec_despesa = Transporte.objects.all().get(id_instituicao=13).despesa
+    query_data.update({'feec_receita':feec_receita, 'feec_despesa':feec_despesa})
+
+    fenf_receita = Transporte.objects.all().get(id_instituicao=14).receita
+    fenf_despesa = Transporte.objects.all().get(id_instituicao=14).despesa
+    query_data.update({'fenf_receita':fenf_receita, 'fenf_despesa':fenf_despesa})
+
+    fem_receita = Transporte.objects.all().get(id_instituicao=15).receita
+    fem_despesa = Transporte.objects.all().get(id_instituicao=15).despesa
+    query_data.update({'fem_receita':fem_receita, 'fem_despesa':fem_despesa})
+
+    iq_receita = Transporte.objects.all().get(id_instituicao=16).receita
+    iq_despesa = Transporte.objects.all().get(id_instituicao=16).despesa
+    query_data.update({'iq_receita':iq_receita, 'iq_despesa':iq_despesa})
+
+    ic_receita = Transporte.objects.all().get(id_instituicao=17).receita
+    ic_despesa = Transporte.objects.all().get(id_instituicao=17).despesa
+    query_data.update({'ic_receita':ic_receita, 'ic_despesa':ic_despesa})
+
+    return render(request, 'base/area/transporte.html', query_data)
 
 def upa(request):
+    '''
+    query_data = {}
+
+    imecc_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=2).receita
+    imecc_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=2).despesa
+    query_data.update({'imecc_receita':imecc_receita, 'imecc_despesa':imecc_despesa})
+
+    ig_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=3).receita
+    ig_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=3).despesa
+    query_data.update({'ig_receita':ig_receita, 'ig_despesa':ig_despesa})
+
+    fcm_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=4).receita
+    fcm_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=4).despesa
+    query_data.update({'fcm_receita':fcm_receita, 'fcm_despesa':fcm_despesa})
+
+    ifgw_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=5).receita
+    ifgw_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=5).despesa
+    query_data.update({'ifgw_receita':ifgw_receita, 'ifgw_despesa':ifgw_despesa})
+
+    fea_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=6).receita
+    fea_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=6).despesa
+    query_data.update({'fea_receita':fea_receita, 'fea_despesa':fea_despesa})
+
+    ifch_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=7).receita
+    ifch_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=7).despesa
+    query_data.update({'ifch_receita':ifch_receita, 'ifch_despesa':ifch_despesa})
+
+    feagri_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=8).receita
+    feagri_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=8).despesa
+    query_data.update({'feagri_receita':feagri_receita, 'feagri_despesa':feagri_despesa})
+
+    iel_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=9).receita
+    iel_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=9).despesa
+    query_data.update({'iel_receita':iel_receita, 'iel_despesa':iel_despesa})
+
+    ib_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=10).receita
+    ib_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=10).despesa
+    query_data.update({'ib_receita':ib_receita, 'ib_despesa':ib_despesa})
+
+    feq_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=12).receita
+    feq_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=12).despesa
+    query_data.update({'feq_receita':feq_receita, 'feq_despesa':feq_despesa})
+
+    feec_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=13).receita
+    feec_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=13).despesa
+    query_data.update({'feec_receita':feec_receita, 'feec_despesa':feec_despesa})
+
+    fenf_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=14).receita
+    fenf_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=14).despesa
+    query_data.update({'fenf_receita':fenf_receita, 'fenf_despesa':fenf_despesa})
+
+    fem_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=15).receita
+    fem_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=15).despesa
+    query_data.update({'fem_receita':fem_receita, 'fem_despesa':fem_despesa})
+
+    iq_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=16).receita
+    iq_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=16).despesa
+    query_data.update({'iq_receita':iq_receita, 'iq_despesa':iq_despesa})
+
+    ic_receita = Auxilio_Estudantil.objects.all().get(id_instituicao=17).receita
+    ic_despesa = Auxilio_Estudantil.objects.all().get(id_instituicao=17).despesa
+    query_data.update({'ic_receita':ic_receita, 'ic_despesa':ic_despesa})
+
+    return render(request, 'base/area/upa.html', query_data))
+    '''
+
     return render(request, 'base/area/upa.html')
-
-
